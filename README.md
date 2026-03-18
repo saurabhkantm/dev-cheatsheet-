@@ -1,4 +1,4 @@
-# Dev Cheatsheet Site
+# Dev Cheatsheet
 
 A fast, simple, beautiful cheatsheet reference for developers. Built with vanilla HTML, CSS, and JavaScript — no frameworks, no build tools required.
 
@@ -9,12 +9,12 @@ A fast, simple, beautiful cheatsheet reference for developers. Built with vanill
 
 ## Features
 
-✅ **Search** - Find cheatsheets by title or description in real time  
-✅ **Filter** - View cheatsheets by category (Git, Terminal, JavaScript, CSS)  
-✅ **Copy to Clipboard** - One-click copying of code snippets  
-✅ **Responsive** - Works on desktop, tablet, and mobile  
-✅ **Lightweight** - No dependencies, fast loading, ~100KB total  
-✅ **Easy to Customize** - Just edit `data.js` to add new cheatsheets  
+**Search** - Find cheatsheets by title or description in real time  
+**Filter** - View cheatsheets by category (Git, Terminal, JavaScript, CSS)  
+**Copy to Clipboard** - One-click copying of code snippets  
+**Responsive** - Works on desktop, tablet, and mobile  
+**Lightweight** - No dependencies, fast loading, ~100KB total  
+**Easy to Customize** - Just edit `data.js` to add new cheatsheets  
 
 ## File Structure
 
@@ -64,4 +64,4 @@ Works in all modern browsers (Chrome, Firefox, Safari, Edge). For older browsers
 - **Sharable** - Send `index.html` to friends, they can use it immediately
 - **Beginner-friendly** - Clean code with comments explaining each function
 
-Enjoy! 🚀
+Enjoy! 
