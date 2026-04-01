@@ -2,6 +2,8 @@
 
 A fast, simple, beautiful cheatsheet reference for developers. Built with vanilla HTML, CSS, and JavaScript — no frameworks, no build tools required.
 
+<img src="assets/Screenshot.png" alt="Dev Cheatsheet UI" width="700">
+
 ## Quick Start
 
 1. **Open `index.html`** in your web browser (just double-click it or drag it to your browser)
