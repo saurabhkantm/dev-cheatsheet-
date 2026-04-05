@@ -91,5 +91,11 @@ var cheatsheetData = [
     category: "terminal",
     description: "Clear the terminal screen",
     code: "clear"
-   }
+   },
+   {
+        title: "Git View Status",
+        category: "git",
+        description: "Check the current state of your repository including staged and unstaged changes.",
+        code: "git status"
+    }
 ];
