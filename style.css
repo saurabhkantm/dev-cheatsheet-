@@ -44,7 +44,6 @@ body {
     background-color: var(--bg);
     color: var(--text);
     min-height: 100vh;
-    /* Prevent horizontal scroll on mobile */
     overflow-x: hidden;
     transition: background-color var(--transition), color var(--transition);
 }
@@ -74,7 +73,6 @@ body {
 }
 
 .header h1 {
-    /* Fluid type: never too large on small screens */
     font-size: clamp(1.6rem, 5vw, 3rem);
     font-weight: 800;
     letter-spacing: -0.03em;
@@ -87,7 +85,7 @@ body {
     color: var(--muted);
     font-size: clamp(0.85rem, 2.5vw, 1rem);
     transition: color var(--transition);
-    padding: 0 40px; /* leave room for toggle button */
+    padding: 0 40px;
 }
 
 /* ── Theme Toggle ── */
@@ -111,7 +109,6 @@ body {
     color: var(--text);
     transition: all var(--transition);
     box-shadow: var(--shadow);
-    /* Accessible tap target */
     min-width: 44px;
     min-height: 44px;
 }
@@ -132,9 +129,16 @@ body {
     margin-bottom: 16px;
 }
 
+/* Search wrapper for clear button positioning (from branch: issue #3) */
+.search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
 .search-bar {
     width: 100%;
-    padding: clamp(10px, 2.5vw, 14px) 18px;
+    /* Mobile-friendly padding with room for clear button on the right */
+    padding: clamp(10px, 2.5vw, 14px) 40px clamp(10px, 2.5vw, 14px) 16px;
     border-radius: 10px;
     border: 1.5px solid var(--border);
     background: var(--surface);
@@ -143,7 +147,7 @@ body {
     outline: none;
     transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
     box-shadow: var(--shadow);
-    /* Prevent iOS auto-zoom (requires font-size >= 16px) */
+    /* Prevent iOS auto-zoom (font-size must be >= 16px) */
     font-size: max(16px, 0.97rem);
 }
 
@@ -156,6 +160,25 @@ body {
     box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.12);
 }
 
+/* Clear (X) button for search bar (from branch: issue #3) */
+.clear-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--muted);
+    display: none;
+    line-height: 1;
+    user-select: none;
+    transition: color var(--transition);
+}
+
+.clear-btn:hover {
+    color: var(--text);
+}
+
 /* ── Filter Buttons ── */
 .filter-section {
     display: flex;
@@ -164,11 +187,9 @@ body {
     gap: 10px;
     margin-bottom: 28px;
     overflow-x: auto;
-    /* Hide scrollbar visually but keep it functional */
     scrollbar-width: none;
     -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
-    /* Padding so active-chip shadow is not clipped */
     padding-bottom: 6px;
     padding-top: 2px;
 }
@@ -256,7 +277,6 @@ body {
     font-weight: 700;
     color: var(--text);
     transition: color var(--transition);
-    /* FIX: long titles wrap instead of overflowing */
     overflow-wrap: break-word;
     min-width: 0;
 }
@@ -269,7 +289,6 @@ body {
     background: var(--tag-bg);
     color: var(--tag-text);
     white-space: nowrap;
-    /* FIX: tag never shrinks and squashes the title */
     flex-shrink: 0;
     border: 1px solid var(--border);
     font-family: 'Courier New', monospace;
@@ -291,10 +310,8 @@ body {
     border-radius: 8px;
     padding: clamp(10px, 3vw, 14px) clamp(12px, 3vw, 16px);
     font-family: 'Courier New', Courier, monospace;
-    /* FIX: slightly smaller mono font on mobile */
     font-size: clamp(0.74rem, 2vw, 0.82rem);
     color: var(--text);
-    /* FIX: code scrolls inside the block, never breaks card width */
     overflow-x: auto;
     white-space: pre;
     -webkit-overflow-scrolling: touch;
@@ -347,6 +364,14 @@ body {
     grid-column: 1 / -1;
 }
 
+/* ── Result Count (from branch) ── */
+.result-count {
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--muted);
+    padding-left: 4px;
+}
+
 /* ════════════════════════════════════════════
    RESPONSIVE BREAKPOINTS
    ════════════════════════════════════════════ */
@@ -365,7 +390,7 @@ body {
         gap: 14px;
     }
 
-    /* Disable lift animation on touch — no hover intent on mobile */
+    /* Disable lift on touch — no hover intent on mobile */
     .card:hover {
         transform: none;
         box-shadow: var(--shadow);
@@ -395,7 +420,6 @@ body {
         transform: none;
     }
 
-    /* Undo the translateY transform used in the desktop style */
     .theme-toggle:hover {
         transform: scale(1.08);
     }
@@ -420,5 +444,9 @@ body {
     .filter-btn {
         font-size: 0.85rem;
         padding: 7px 14px;
+    }
+
+    .search-bar {
+        padding: 10px 36px 10px 12px;
     }
 }
