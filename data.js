@@ -122,5 +122,12 @@ var cheatsheetData = [
     category: "react",
     description: "Show or hide elements based on a condition in React",
     code: "{isLoggedIn ? <h2>Welcome!</h2> : <h2>Please log in.</h2>}",
-  }
+  },
+  {
+    title: "React Custom Hook",
+    category: "react",
+    description:
+      "Create a reusable custom hook to share logic across components",
+    code: "function useWindowWidth() {\n  const [width, setWidth] = useState(window.innerWidth);\n  useEffect(() => {\n    window.addEventListener('resize', () =>\n      setWidth(window.innerWidth));\n  }, []);\n  return width;\n}",
+  },
 ];
